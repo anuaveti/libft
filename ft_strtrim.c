@@ -22,5 +22,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (start < end && setcheck(*(end - 1), set))
 		--end;
 	trim = ft_substr(start, 0, end - start);
-	return (ret);
+	return (trim);
 }
