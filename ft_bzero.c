@@ -6,13 +6,13 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:24:08 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/01/29 19:29:53 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/03/23 20:45:54 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
 }

@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 19:53:20 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/01/29 20:01:53 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/03/23 20:47:18 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	d = dst;
 	s = (unsigned char *)src;
 	if (dst < src)
-		return (ft_memcp (dst, src, len));
+		return (ft_memcpy(dst, src, len));
 	if (dst > src)
 		while (len--)
 			d = s;

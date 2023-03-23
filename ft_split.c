@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/23 20:03:33 by anuaveti          #+#    #+#             */
+/*   Updated: 2023/03/23 20:08:10 by anuaveti         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	wordcount(char const *str, char delim)
@@ -14,15 +26,15 @@ static int	wordcount(char const *str, char delim)
 		if (str[i] == delim)
 			p_delim = 1;
 		else if (p_delim)
-			wordcount++;
-		if (str[i] ! = delim)
+			w_count++;
+		if (str[i] != delim)
 			p_delim = 0;
 		i++;
 	}
 	return (w_count);
 }
 
-static int	wordsize(char const *str; char delim, int i)
+static int	wordsize(char const *str, char delim, int i)
 {
 	int	w_size;
 
@@ -53,7 +65,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = -1;
 	w_count = wordcount(s, c);
-	if (!(strs = (char **)malloc(w_count + 1) * sizeof(char *)))
+	if (!(strs = (char **)malloc((w_count + 1) * sizeof(char *))))
 		return (NULL);
 	while (++j < w_count)
 	{

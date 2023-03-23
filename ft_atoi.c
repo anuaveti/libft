@@ -6,11 +6,13 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 20:38:16 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/01/29 20:40:04 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/03/23 20:37:55 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(char *str, int *p_i)
+#include "libft.h"
+
+int	ft_isspace(const char *str, int *p_i)
 {
 	int	i;
 	int	count;

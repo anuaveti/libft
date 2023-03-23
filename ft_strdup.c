@@ -6,9 +6,11 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 20:40:28 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/01/29 20:41:57 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/03/23 20:34:27 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 
@@ -18,12 +20,12 @@ char	*ft_strdup(const char *s1)
 	char	*d;
 
 	i = 0;
-	d = ((dst = (char *)malloc(ft_strlen(src) * sizeof(char) + 1)));
+	d = ((dst = (char *)malloc(ft_strlen(s1) * sizeof(char) + 1)));
 	if (!d)
 		return (0);
-	while (src[i] != '\0')
+	while (s1[i] != '\0')
 	{
-		dst[i] = src[i];
+		dst[i] = s1[i];
 		i++;
 	}
 	dst[i] = '\0';
