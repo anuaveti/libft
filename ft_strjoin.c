@@ -44,9 +44,9 @@ int	ft_finlen(char **strs, int size, int sep_len)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	int		size;
-	int		fin_len;
+	int	i;
+	int	size;
+	int	fin_len;
 	char	*str;
 	char	*r;
 

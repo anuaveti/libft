@@ -17,7 +17,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char	*d;
 	unsigned char	*s;
 
-	d = dst;
+	d = (unsigned char *)dst;
 	s = (unsigned char *)src;
 	if (dst < src)
 		return (ft_memcpy(dst, src, len));
