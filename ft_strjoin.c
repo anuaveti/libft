@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 20:42:40 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/03/23 20:20:27 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/03/29 19:03:37 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
-	if ((str = ft_calloc(len1 + len2 + 1, sizeof(char))) == NULL)
+	str = ft_calloc(len1 + len2 + 1, sizeof(char));
+	if (str == NULL)
 		return (NULL);
 	str[len1 + len2] = '\0';
 	ft_strlcpy(str, s2, len1);

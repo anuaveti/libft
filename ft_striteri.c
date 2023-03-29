@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 20:51:03 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/03/23 20:51:05 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/03/29 19:04:46 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	i = 0;
 	while (s[i] != '\0')
 	{
-		f(i, s+i);
+		f(i, s + i);
 		i++;
 	}
 }

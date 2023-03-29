@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 20:24:42 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/03/23 20:24:46 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/03/29 18:58:42 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char		*d;
+	char			*d;
 	unsigned int	i;
 
 	if (!s)

@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 20:03:33 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/03/23 20:08:10 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/03/29 19:26:50 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int	wordsize(char const *str, char delim, int i)
 
 static void	ft_free(char **strs, int j)
 {
-	while (j-- >0)
+	while (j-- > 0)
 		free(strs[j]);
 	free(strs);
 }
@@ -65,14 +65,16 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = -1;
 	w_count = wordcount(s, c);
-	if (!(strs = (char **)malloc((w_count + 1) * sizeof(char *))))
+	strs = (char **)malloc((w_count + 1) * sizeof(char *));
+	if (!strs)
 		return (NULL);
 	while (++j < w_count)
 	{
 		while (s[i] == c)
 			i++;
 		w_size = wordsize(s, c, i);
-		if (!(strs[j] = ft_substr(s, i, w_size)))
+		strs[j] = ft_substr(s, i, w_size);
+		if (!strs[j])
 		{
 			ft_free(strs, j);
 			return (NULL);

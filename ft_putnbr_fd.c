@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 20:25:19 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/03/23 20:25:50 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/03/29 19:14:46 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	number;
 
-	number = n >= 0 ? n : -n;
+	if (n >= 0)
+		number = n;
+	else
+		number = -n;
 	if (n < 0)
 		ft_putchar_fd('-', fd);
 	if (number < 10)
