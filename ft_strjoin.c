@@ -12,85 +12,36 @@
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, char *src)
+char	*ft_scpy(char *dst, const char *src)
 {
 	int	i;
+	int	len;
 
 	i = 0;
+	len = ft_strlen(dst);
 	while (src[i] != '\0')
 	{
-		dst[i] = src[i];
+		dst[len + i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
+	dst[len + i] = '\0';
 	return (dst);
-}
-
-int	ft_finlen(char **strs, int size, int sep_len)
-{
-	int	i;
-	int	fin_len;
-
-	i = 0;
-	fin_len = 0;
-	while (i < size)
-	{
-		fin_len += ft_strlen(strs[i]) + sep_len;
-		i++;
-	}
-	fin_len -= sep_len;
-	return (fin_len);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
-	int	size;
-	int	fin_len;
+	size_t	len1;
+	size_t	len2;
 	char	*str;
-	char	*r;
 
-	if (size == 0)
-		return ((char *)malloc(sizeof(char)));
-	fin_len = ft_finlen(s1, size, ft_strlen(s2));
-	r = ((str = (char *)malloc((fin_len + 1) * sizeof(char))));
-	if (!r)
-		return (0);
-	i = 0;
-	while (i < size)
-	{
-		ft_strcpy(r, s1[i]);
-		r += ft_strlen(s1[i]);
-		if (i < size - 1)
-		{
-			ft_strcpy(r, s2);
-			r += ft_strlen(s2);
-		}
-		i++;
-	}
-	*r = '\0';
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	if ((str = ft_calloc(len1 + len2 + 1, sizeof(char))) == NULL)
+		return (NULL);
+	str[len1 + len2] = '\0';
+	ft_strlcpy(str, s2, len1);
+	ft_scpy(str, s2);
 	return (str);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	char	**strs;
-	char	*sep;
-	char	*res;
-	int		size = 4;
-	
-	strs = (char **)malloc(4 * sizeof(char *));
-	strs[0] = (char *)malloc(sizeof(char) * 5 + 1);
-	strs[1] = (char *)malloc(sizeof(char) * 11 + 1);
-	strs[2] = (char *)malloc(sizeof(char) * 26 + 1);
-	strs[3] = (char *)malloc(sizeof(char) * 23 + 1);
-	strs[0] = "Hello";
-	strs[1] = "beautiful,";
-	strs[2] = "I have been waiting for u!";
-	strs[3] = "You look lovely today!";
-	sep = " ";
-	res = ft_strjoin(size, strs, sep);
-	printf("%s$\n", res);
-	free(res);
-}*/
