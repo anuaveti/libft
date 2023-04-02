@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 20:51:03 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/03/29 19:04:46 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/04/02 12:28:26 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned	i;
+	unsigned int	i;
 
 	if (!(s && f))
 		return ;

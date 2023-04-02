@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 20:31:31 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/03/29 19:18:05 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/04/02 12:38:05 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,15 @@ static void	ft_putnbr_s(long n, char *str, int *i)
 		str[(*i)++] = n + '0';
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int	i;
+	int		i;
 	char	*str;
 	long	nbr;
 
 	nbr = n;
-	if ((str = malloc(sizeof(char) * (char_count(nbr) + 1))) == NULL)
+	str = malloc(sizeof(char) * (char_count(nbr) + 1));
+	if (str == NULL)
 		return (NULL);
 	i = 0;
 	if (nbr < 0)

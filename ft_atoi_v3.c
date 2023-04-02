@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 20:38:16 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/03/23 20:37:55 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/04/02 12:46:05 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	ft_isspace(const char c)
 {
-	if (c == ' ' || c == '\t' || c == '\n' || 
-			c == '\v' || c == '\f' || c == '\r')
+	if (c == ' ' || c == '\t' || c == '\n'
+		|| c == '\v' || c == '\f' || c == '\r')
 		return (1);
 	return (0);
 }
@@ -27,13 +27,13 @@ static int	ft_isnum(const char c)
 	return (-1);
 }
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int		ntmp;
-	int		mult;
-	int		i;
+	int				ntmp;
+	int				mult;
+	int				i;
 	unsigned long	n;
-	insigned long	limit;
+	unsigned long	limit;
 
 	n = 0;
 	i = 0;
@@ -44,7 +44,8 @@ int		ft_atoi(const char *str)
 	if (str[i] == '+' || str[i] == '-')
 		if (str[i++] == '-')
 			mult = -1;
-	while ((ntmp = ft_isnum(str[i++])) != -1)
+	ntmp = ft_isnum(str[i++]);
+	while (ntmp != -1)
 	{
 		if (mult == 1 && (n > limit || (n == limit && ntmp > 7)))
 			return (-1);

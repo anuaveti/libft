@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 20:42:40 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/03/29 19:03:37 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/04/02 12:26:52 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memalloc(size_t size)
 	if (!str)
 		return (NULL);
 	ft_bzero(str, size);
-	return (str;)
+	return (str);
 }
 
 char	*ft_strnew(size_t size)
