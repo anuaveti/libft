@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 15:34:02 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/01/29 16:04:29 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:03:20 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,3 @@ int	ft_toupper(int c)
 		k -= 32;
 	return (k);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	printf("%d", ft_toupper('z'));
-}*/

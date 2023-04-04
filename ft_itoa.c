@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 20:31:31 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/03/29 19:18:05 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:56:09 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,16 @@ static int	char_count(int n)
 	int				i;
 	unsigned int	num;
 
-	i = n >= 0 ? 0 : 1;
-	num = n >= 0 ? n : -n;
+	if (n >= 0)
+	{
+		i = 0;
+		num = n;
+	}
+	else
+	{
+		i = 1;
+		num = -n;
+	}
 	while (num >= 1)
 	{
 		num = num / 10;
@@ -27,7 +35,23 @@ static int	char_count(int n)
 	return (i);
 }
 
-char		*ft_itoa(int n)
+static int	ft_size(int n)
+{
+	if (n != 0)
+		return (char_count(n));
+	else
+		return (1);
+}
+
+static int	ft_num(int n)
+{
+	if (n >= 0)
+		return (n);
+	else
+		return (-n);
+}
+
+char	*ft_itoa(int n)
 {
 	int				i;
 	char			*str;
@@ -35,11 +59,15 @@ char		*ft_itoa(int n)
 	unsigned int	num;
 
 	i = 1;
-	size = n != 0 ? char_count(n) : 1;
-	num = n >= 0 ? n : -n;
-	if (!(str = (char *)malloc((size + 1) * sizeof(char))))
+	size = ft_size(n);
+	num = ft_num(n);
+	str = (char *)malloc((size + 1) * sizeof(char));
+	if (!str)
 		return (NULL);
-	str[0] = n != 0 ? '-' : '0';
+	if (n != 0)
+		str[0] = '-';
+	else
+		str[0] = '0';
 	while (num >= 1)
 	{
 		str[size - i] = num % 10 + '0';

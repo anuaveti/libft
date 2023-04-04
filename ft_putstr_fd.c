@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 20:50:27 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/03/23 20:50:30 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:58:24 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
+	if (s == NULL)
+		return ;
+	while (*s)
+		ft_putchar_fd(*s++, fd);
 }

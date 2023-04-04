@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 20:03:33 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/03/29 19:26:50 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:58:58 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,28 +58,26 @@ char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
-	int		w_count;
-	int		w_size;
 	char	**strs;
 
 	i = 0;
 	j = -1;
-	w_count = wordcount(s, c);
-	strs = (char **)malloc((w_count + 1) * sizeof(char *));
+	if (!s)
+		return (NULL);
+	strs = (char **)malloc((wordcount(s, c) + 1) * sizeof(char *));
 	if (!strs)
 		return (NULL);
-	while (++j < w_count)
+	while (++j < wordcount(s, c))
 	{
 		while (s[i] == c)
 			i++;
-		w_size = wordsize(s, c, i);
-		strs[j] = ft_substr(s, i, w_size);
+		strs[j] = ft_substr(s, i, wordsize(s, c, i));
 		if (!strs[j])
 		{
 			ft_free(strs, j);
 			return (NULL);
 		}
-		i += w_size;
+		i += wordsize(s, c, i);
 	}
 	strs[j] = 0;
 	return (strs);

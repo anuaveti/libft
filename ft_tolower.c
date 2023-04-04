@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:04:54 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/03/23 20:30:12 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:03:13 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,3 @@ int	ft_tolower(int c)
 		k += 32;
 	return (k);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	printf("%d", ft_tolower('Z'));
-}*/

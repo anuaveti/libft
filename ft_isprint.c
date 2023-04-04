@@ -6,9 +6,11 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 13:34:27 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/03/23 20:26:26 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:55:53 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
@@ -16,14 +18,3 @@ int	ft_isprint(int c)
 		return (0);
 	return (1);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	printf("%d\n", ft_isprint('*'));
-	printf("%d\n", ft_isprint('^'));
-	printf("%d\n", ft_isprint('#'));
-	printf("%d\n", ft_isprint('p'));
-	printf("%d\n", ft_isprint(92));
-	printf("%d\n", ft_isprint('/'));
-}*/

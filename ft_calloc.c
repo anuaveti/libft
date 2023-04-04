@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 20:29:51 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/03/29 19:21:25 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:54:22 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,23 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*cal;
+	size_t	t;
+	char	*cal;
 
-	cal = (void *)malloc(count * size);
+	t = count * size;
+	if (count == 0 || size == 0)
+	{
+		cal = malloc(t);
+		if (!cal)
+			return (0);
+		return (cal);
+	}
+	if (count > SIZE_MAX / size)
+		return (0);
+	cal = malloc(t);
 	if (!cal)
-		return (NULL);
-	cal = ft_memset(cal, 0, count * size);
+		return (0);
+	else
+		ft_memset(cal, '\0', t);
 	return (cal);
 }

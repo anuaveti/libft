@@ -6,52 +6,34 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 20:38:16 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/03/23 20:37:55 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:53:10 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(const char *str, int *p_i)
-{
-	int	i;
-	int	count;
-
-	i = 0;
-	count = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	while (str[i] != '\0' && (str[i] == 43 || str[i] == 45))
-	{
-		if (str[i] == 45)
-			count *= -1;
-		i++;
-	}
-	*p_i = i;
-	return (count);
-}
-
 int	ft_atoi(const char *str)
 {
-	int	res;
-	int	sign;
 	int	i;
+	int	nb;
+	int	neg;
 
-	res = 0;
-	sign = ft_isspace(str, &i);
-	while (str[i] != '\0' && (str[i] >= 48 && str[i] <= 57))
+	neg = 0;
+	nb = 0;
+	i = 0;
+	while (*str == ' ' || *str == '\n' || *str == '\t' || *str == '\v'
+		|| *str == '\r' || *str == '\f')
+		str++;
+	if (*str == '-')
+		neg = 1;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (str[i] >= 48 && str[i] <= 57)
 	{
-		res *= 10;
-		res += str[i] - 48;
+		nb = (str[i] - 48) + (10 * nb);
 		i++;
 	}
-	res *= sign;
-	return (res);
+	if (neg == 1)
+		nb = nb * -1;
+	return (nb);
 }
-/*
-#include <stdio.h>
-int	main(int argc, char **argv)
-{
-	if (argc == 2)
-		printf("%d", ft_atoi(argv[1]));
-}*/

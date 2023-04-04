@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 13:06:35 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/03/23 20:23:14 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:54:52 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,3 @@ int	ft_isalnum(int c)
 		return (0);
 	return (1);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	printf("%d\n", ft_isalnum('*'));
-    printf("%d\n", ft_isalnum('Z'));
-	printf("%d\n", ft_isalnum('a'));
-	printf("%d\n", ft_isalnum('z'));
-	printf("%d\n", ft_isalnum('0'));
-	printf("%d\n", ft_isalnum('9'));
-}*/

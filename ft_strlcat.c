@@ -6,13 +6,13 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 20:32:41 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/03/23 20:44:26 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:00:32 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	j;
@@ -21,10 +21,12 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 
 	i = 0;
 	j = 0;
-	while (dst[j] != '\0')
+	if (!dst && dstsize == 0)
+		return (0);
+	while (dst[j] != '\0' && dst && j < dstsize)
 		j++;
-	dlen = j;
 	slen = ft_strlen(src);
+	dlen = j;
 	if (dstsize == 0 || dstsize <= dlen)
 		return (slen + dstsize);
 	while (src[i] != '\0' && i < dstsize - dlen - 1)
@@ -36,13 +38,3 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 	dst[j] = '\0';
 	return (dlen + slen);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	char a[] = "Hello, beautiful";
-	char b[] = "Hi";
-	size_t c = 2;
-	printf("%u\n", ft_strlcat(a, b, c));
-	printf("%lu", strlcat(a, b, c));
-}*/

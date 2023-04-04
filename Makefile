@@ -6,7 +6,7 @@
 #    By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/28 13:21:42 by anuaveti          #+#    #+#              #
-#    Updated: 2023/01/29 15:16:54 by anuaveti         ###   ########.fr        #
+#    Updated: 2023/04/04 19:45:34 by anuaveti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,21 +26,20 @@ OBJS = ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o\
 	   ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o\
 	   ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o\
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror 
 
-CC = gcc
+CC = cc
 
 HEADER = libft.h
 
 
 all: $(NAME) 
 
-//%.o: 
+%.o:	%.c ${HEADER}
+	${CC} ${FLAGS} -c $< -o $@
 
-$(NAME):
-	$(CC) $(FLAGS) -c $(SRC)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+$(NAME): $(OBJS)
+	ar rsc $(NAME) $?
 
 clean:
 	rm -f $(OBJS)

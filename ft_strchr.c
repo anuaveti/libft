@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:09:52 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/01/29 17:50:25 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/04/04 23:10:12 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return ((char *)m + i);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	printf("%s\n", ft_strchr("hello", 10));
-	printf("%s", strchr("hello", 10));
-}*/

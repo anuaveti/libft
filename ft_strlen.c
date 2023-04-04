@@ -6,7 +6,7 @@
 /*   By: anuaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 13:54:47 by anuaveti          #+#    #+#             */
-/*   Updated: 2023/01/29 16:03:07 by anuaveti         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:01:13 by anuaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,3 @@ size_t	ft_strlen(const char *s)
 	}
 	return (i);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	printf("%zu", ft_strlen(""));
-}*/
