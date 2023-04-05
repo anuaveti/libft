@@ -12,35 +12,27 @@
 
 #include "libft.h"
 
-static int	char_count(int n)
-{
-	int				i;
-	unsigned int	num;
-
-	if (n >= 0)
-	{
-		i = 0;
-		num = n;
-	}
-	else
-	{
-		i = 1;
-		num = -n;
-	}
-	while (num >= 1)
-	{
-		num = num / 10;
-		i++;
-	}
-	return (i);
-}
-
 static int	ft_size(int n)
 {
-	if (n != 0)
-		return (char_count(n));
+	int				i;
+	unsigned int	un;
+
+	i = 0;
+	if (n == 0)
+		return (++i);
+	if (n < 0)
+	{
+		++i;
+		un = -n;
+	}
 	else
-		return (1);
+		un = n;
+	while (un > 0)
+	{
+		++i;
+		un /= 10;
+	}
+	return (i);
 }
 
 static int	ft_num(int n)
@@ -72,7 +64,7 @@ char	*ft_itoa(int n)
 	{
 		str[size - i] = num % 10 + '0';
 		num = num / 10;
-		i++;
+		++i;
 	}
 	str[size] = '\0';
 	return (str);
